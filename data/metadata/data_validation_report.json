@@ -1,0 +1,44 @@
+{
+  "validation_timestamp": "2026-10-29T17:53:35.591584+00:00",
+  "status": "PASSED",
+  "error_count": 0,
+  "warning_count": 4,
+  "info_count": 1,
+  "issues": [
+    {
+      "check_name": "orphan_appearance_players",
+      "severity": "WARNING",
+      "message": "1 player_ids in appearances do not exist in players table",
+      "count": 1,
+      "details": null
+    },
+    {
+      "check_name": "excessive_match_minutes",
+      "severity": "WARNING",
+      "message": "Found 3 appearances with >130 minutes played (extra time outlier)",
+      "count": 3,
+      "details": null
+    },
+    {
+      "check_name": "zero_minute_appearances",
+      "severity": "INFO",
+      "message": "Found 3 appearances with 0 minutes (unused substitute or bench event)",
+      "count": 3,
+      "details": null
+    },
+    {
+      "check_name": "zero_or_null_market_value",
+      "severity": "WARNING",
+      "message": "Found 1 zero values and 0 null values in player valuations",
+      "count": 1,
+      "details": null
+    },
+    {
+      "check_name": "missing_or_invalid_player_dob",
+      "severity": "WARNING",
+      "message": "Found 49 players with missing or unparseable date_of_birth",
+      "count": 49,
+      "details": null
+    }
+  ]
+}

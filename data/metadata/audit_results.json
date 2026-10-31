@@ -1,0 +1,692 @@
+[
+  {
+    "check": "raw/appearances",
+    "status": "PASS",
+    "detail": "1,894,350 rows x 13 cols | 45.3 MB"
+  },
+  {
+    "check": "raw/clubs",
+    "status": "PASS",
+    "detail": "796 rows x 17 cols | 0.1 MB"
+  },
+  {
+    "check": "raw/club_games",
+    "status": "PASS",
+    "detail": "177,916 rows x 11 cols | 2.1 MB"
+  },
+  {
+    "check": "raw/competitions",
+    "status": "PASS",
+    "detail": "65 rows x 11 cols | 0.0 MB"
+  },
+  {
+    "check": "raw/countries",
+    "status": "PASS",
+    "detail": "124 rows x 8 cols | 0.0 MB"
+  },
+  {
+    "check": "raw/games",
+    "status": "PASS",
+    "detail": "88,958 rows x 23 cols | 5.0 MB"
+  },
+  {
+    "check": "raw/players",
+    "status": "PASS",
+    "detail": "50,149 rows x 26 cols | 4.4 MB"
+  },
+  {
+    "check": "raw/player_valuations",
+    "status": "PASS",
+    "detail": "656,301 rows x 6 cols | 7.2 MB"
+  },
+  {
+    "check": "raw/transfers",
+    "status": "PASS",
+    "detail": "175,165 rows x 10 cols | 5.8 MB"
+  },
+  {
+    "check": "schema/players",
+    "status": "PASS",
+    "detail": "All required columns present: ['player_id', 'name', 'date_of_birth']..."
+  },
+  {
+    "check": "schema/player_valuations",
+    "status": "PASS",
+    "detail": "All required columns present: ['player_id', 'date', 'market_value_in_eur']..."
+  },
+  {
+    "check": "schema/appearances",
+    "status": "PASS",
+    "detail": "All required columns present: ['player_id', 'game_id', 'minutes_played']..."
+  },
+  {
+    "check": "schema/games",
+    "status": "PASS",
+    "detail": "All required columns present: ['game_id', 'competition_id', 'season']..."
+  },
+  {
+    "check": "schema/clubs",
+    "status": "PASS",
+    "detail": "All required columns present: ['club_id', 'name', 'domestic_competition_id']..."
+  },
+  {
+    "check": "schema/competitions",
+    "status": "PASS",
+    "detail": "All required columns present: ['competition_id', 'name', 'type']..."
+  },
+  {
+    "check": "schema/transfers",
+    "status": "PASS",
+    "detail": "All required columns present: ['player_id', 'transfer_date', 'from_club_id']..."
+  },
+  {
+    "check": "schema/club_games",
+    "status": "PASS",
+    "detail": "All required columns present: ['game_id', 'club_id']..."
+  },
+  {
+    "check": "valuations/date_range",
+    "status": "PASS",
+    "detail": "2000-01-20 to 2026-06-12 | 656,301 records"
+  },
+  {
+    "check": "valuations/null_dates",
+    "status": "PASS",
+    "detail": "0 null dates in player_valuations"
+  },
+  {
+    "check": "games/date_range",
+    "status": "PASS",
+    "detail": "2006-06-09 to 2026-07-06 | 88,958 games"
+  },
+  {
+    "check": "competition/GB1",
+    "status": "PASS",
+    "detail": "premier-league | type=domestic_league | country=England"
+  },
+  {
+    "check": "competition/ES1",
+    "status": "PASS",
+    "detail": "laliga | type=domestic_league | country=Spain"
+  },
+  {
+    "check": "competition/IT1",
+    "status": "PASS",
+    "detail": "serie-a | type=domestic_league | country=Italy"
+  },
+  {
+    "check": "competition/L1",
+    "status": "PASS",
+    "detail": "bundesliga | type=domestic_league | country=Germany"
+  },
+  {
+    "check": "competition/FR1",
+    "status": "PASS",
+    "detail": "ligue-1 | type=domestic_league | country=France"
+  },
+  {
+    "check": "games/GB1",
+    "status": "PASS",
+    "detail": "5,320 games | seasons 2012 to 2025"
+  },
+  {
+    "check": "games/ES1",
+    "status": "PASS",
+    "detail": "5,320 games | seasons 2012 to 2025"
+  },
+  {
+    "check": "games/IT1",
+    "status": "PASS",
+    "detail": "5,320 games | seasons 2012 to 2025"
+  },
+  {
+    "check": "games/L1",
+    "status": "PASS",
+    "detail": "4,284 games | seasons 2012 to 2025"
+  },
+  {
+    "check": "games/FR1",
+    "status": "PASS",
+    "detail": "4,997 games | seasons 2012 to 2025"
+  },
+  {
+    "check": "nulls/player_valuations/player_id",
+    "status": "PASS",
+    "detail": "0.0% missing"
+  },
+  {
+    "check": "nulls/player_valuations/date",
+    "status": "PASS",
+    "detail": "0.0% missing"
+  },
+  {
+    "check": "nulls/player_valuations/market_value_in_eur",
+    "status": "PASS",
+    "detail": "0.0% missing"
+  },
+  {
+    "check": "nulls/players/player_id",
+    "status": "PASS",
+    "detail": "0.0% missing"
+  },
+  {
+    "check": "nulls/players/date_of_birth",
+    "status": "PASS",
+    "detail": "0.1% missing"
+  },
+  {
+    "check": "nulls/players/position",
+    "status": "PASS",
+    "detail": "0.0% missing"
+  },
+  {
+    "check": "nulls/appearances/player_id",
+    "status": "PASS",
+    "detail": "0.0% missing"
+  },
+  {
+    "check": "nulls/appearances/game_id",
+    "status": "PASS",
+    "detail": "0.0% missing"
+  },
+  {
+    "check": "nulls/appearances/minutes_played",
+    "status": "PASS",
+    "detail": "0.0% missing"
+  },
+  {
+    "check": "nulls/games/game_id",
+    "status": "PASS",
+    "detail": "0.0% missing"
+  },
+  {
+    "check": "nulls/games/competition_id",
+    "status": "PASS",
+    "detail": "0.0% missing"
+  },
+  {
+    "check": "nulls/games/date",
+    "status": "PASS",
+    "detail": "0.0% missing"
+  },
+  {
+    "check": "duplicates/player_valuations",
+    "status": "PASS",
+    "detail": "0 duplicate rows on ['player_id', 'date']"
+  },
+  {
+    "check": "duplicates/games",
+    "status": "PASS",
+    "detail": "0 duplicate rows on ['game_id']"
+  },
+  {
+    "check": "duplicates/players",
+    "status": "PASS",
+    "detail": "0 duplicate rows on ['player_id']"
+  },
+  {
+    "check": "duplicates/clubs",
+    "status": "PASS",
+    "detail": "0 duplicate rows on ['club_id']"
+  },
+  {
+    "check": "duplicates/appearances",
+    "status": "PASS",
+    "detail": "0 duplicate rows on ['player_id', 'game_id']"
+  },
+  {
+    "check": "join/appearances->games",
+    "status": "PASS",
+    "detail": "0 orphan appearance rows (0.0%)"
+  },
+  {
+    "check": "join/appearances->players",
+    "status": "PASS",
+    "detail": "2 unmatched player_ids (0.0%)"
+  },
+  {
+    "check": "join/valuations->players",
+    "status": "PASS",
+    "detail": "0 valuation rows with unknown player (0.0%)"
+  },
+  {
+    "check": "join/games->competitions",
+    "status": "PASS",
+    "detail": "1,214 games with unknown competition (1.4%)"
+  },
+  {
+    "check": "currency/market_value_in_eur",
+    "status": "PASS",
+    "detail": "min=0 max=200,000,000 | neg=0 zero=1 >500M=0"
+  },
+  {
+    "check": "currency/eur_confirmed",
+    "status": "PASS",
+    "detail": "Transfermarkt market_value_in_eur is natively EUR - no conversion needed"
+  },
+  {
+    "check": "transfers/fee_null_pct",
+    "status": "PASS",
+    "detail": "35.1% of fees are null/undisclosed (expected for real data)"
+  },
+  {
+    "check": "transfers/fee_range",
+    "status": "INFO",
+    "detail": "Non-null fee range: 0 to 222,000,000 EUR"
+  },
+  {
+    "check": "interim/clean_players",
+    "status": "PASS",
+    "detail": "50,149 rows x 11 cols | 1.6 MB"
+  },
+  {
+    "check": "interim/clean_games",
+    "status": "PASS",
+    "detail": "88,958 rows x 23 cols | 3.9 MB"
+  },
+  {
+    "check": "interim/clean_appearances",
+    "status": "PASS",
+    "detail": "1,894,350 rows x 11 cols | 23.7 MB"
+  },
+  {
+    "check": "interim/clean_player_valuations",
+    "status": "PASS",
+    "detail": "656,300 rows x 6 cols | 3.9 MB"
+  },
+  {
+    "check": "interim/clean_clubs",
+    "status": "PASS",
+    "detail": "796 rows x 8 cols | 0.0 MB"
+  },
+  {
+    "check": "interim/clean_transfers",
+    "status": "PASS",
+    "detail": "175,165 rows x 10 cols | 3.1 MB"
+  },
+  {
+    "check": "interim/clean_competitions",
+    "status": "PASS",
+    "detail": "65 rows x 11 cols | 0.0 MB"
+  },
+  {
+    "check": "features/exists",
+    "status": "PASS",
+    "detail": "70,401 rows x 50 cols | seasons 2013 to 2024"
+  },
+  {
+    "check": "features/target_column",
+    "status": "PASS",
+    "detail": "historical_market_value: 70,401 non-null | min=10,000 max=200,000,000"
+  },
+  {
+    "check": "features/league_GB1",
+    "status": "PASS",
+    "detail": "5,606 player-season rows"
+  },
+  {
+    "check": "features/league_ES1",
+    "status": "PASS",
+    "detail": "5,614 player-season rows"
+  },
+  {
+    "check": "features/league_IT1",
+    "status": "PASS",
+    "detail": "5,920 player-season rows"
+  },
+  {
+    "check": "features/league_L1",
+    "status": "PASS",
+    "detail": "4,791 player-season rows"
+  },
+  {
+    "check": "features/league_FR1",
+    "status": "PASS",
+    "detail": "5,113 player-season rows"
+  },
+  {
+    "check": "leakage/prev_valuation_before_reference",
+    "status": "PASS",
+    "detail": "0 rows where previous_valuation_date > valuation_reference_date (must be 0)"
+  },
+  {
+    "check": "features/null/age_at_reference_date",
+    "status": "PASS",
+    "detail": "0.0% missing [age proxy]"
+  },
+  {
+    "check": "features/null/goals_per_90",
+    "status": "PASS",
+    "detail": "0.0% missing [per-90 goals]"
+  },
+  {
+    "check": "features/null/minutes_played",
+    "status": "PASS",
+    "detail": "0.0% missing [minutes]"
+  },
+  {
+    "check": "features/null/competition_strength",
+    "status": "PASS",
+    "detail": "0.0% missing [league strength]"
+  },
+  {
+    "check": "features/null/previous_market_value",
+    "status": "PASS",
+    "detail": "3.9% missing [prior valuation]"
+  },
+  {
+    "check": "features/null/financial_aggregation_level",
+    "status": "PASS",
+    "detail": "0.0% missing [financial flag]"
+  },
+  {
+    "check": "temporal_split/ordering",
+    "status": "PASS",
+    "detail": "Train 2013-2021 | Val 2022-2022 | Test 2023-2024"
+  },
+  {
+    "check": "temporal_split/sizes",
+    "status": "INFO",
+    "detail": "Train 51,774 | Val 6,219 | Test 12,408"
+  },
+  {
+    "check": "leakage/train_test_season_overlap",
+    "status": "PASS",
+    "detail": "No overlap - clean split"
+  },
+  {
+    "check": "league_strength/GB1",
+    "status": "PASS",
+    "detail": "normalized_strength=1.0518 | method=Multi-season Cross-League Continental Elo Integration"
+  },
+  {
+    "check": "league_strength/ES1",
+    "status": "PASS",
+    "detail": "normalized_strength=1.0626 | method=Multi-season Cross-League Continental Elo Integration"
+  },
+  {
+    "check": "league_strength/IT1",
+    "status": "PASS",
+    "detail": "normalized_strength=1.0444 | method=Multi-season Cross-League Continental Elo Integration"
+  },
+  {
+    "check": "league_strength/L1",
+    "status": "PASS",
+    "detail": "normalized_strength=1.0654 | method=Multi-season Cross-League Continental Elo Integration"
+  },
+  {
+    "check": "league_strength/FR1",
+    "status": "PASS",
+    "detail": "normalized_strength=1.0459 | method=Multi-season Cross-League Continental Elo Integration"
+  },
+  {
+    "check": "league_strength/plausible_range",
+    "status": "PASS",
+    "detail": "normalized_strength range 0.9906 to 1.0654 (expected 0.8-1.5)"
+  },
+  {
+    "check": "league_strength/total_competitions",
+    "status": "INFO",
+    "detail": "32 competitions have league strength ratings"
+  },
+  {
+    "check": "league_strength/competition_strength_in_features",
+    "status": "PASS",
+    "detail": "70,401 non-null values | min=0.9745 max=1.1095"
+  },
+  {
+    "check": "league_strength/non_positive_values",
+    "status": "PASS",
+    "detail": "0 values <= 0 (must be 0)"
+  },
+  {
+    "check": "financial/club_financials_benchmark.csv",
+    "status": "PASS",
+    "detail": "60 rows x 12 cols - DFML club-level"
+  },
+  {
+    "check": "financial/league_financial_benchmark.csv",
+    "status": "PASS",
+    "detail": "25 rows x 9 cols - UEFA league-level"
+  },
+  {
+    "check": "financial/aggregation_flag_distribution",
+    "status": "PASS",
+    "detail": "{'missing': 58783, 'league_fallback': 10209, 'club_observed': 1409}"
+  },
+  {
+    "check": "financial/feature/club_revenue_eur",
+    "status": "PASS",
+    "detail": "1,409 non-null values"
+  },
+  {
+    "check": "financial/feature/league_average_revenue_eur",
+    "status": "PASS",
+    "detail": "11,618 non-null values"
+  },
+  {
+    "check": "financial/feature/wage_bill_eur",
+    "status": "PASS",
+    "detail": "1,409 non-null values"
+  },
+  {
+    "check": "registry/total",
+    "status": "PASS",
+    "detail": "65 competitions | 14 SUPPORTED | 19 PARTIAL | 0 INSUFFICIENT"
+  },
+  {
+    "check": "registry/GB1",
+    "status": "PASS",
+    "detail": "status=SUPPORTED | matches=5,320 | player_stats=149,751"
+  },
+  {
+    "check": "registry/ES1",
+    "status": "PASS",
+    "detail": "status=SUPPORTED | matches=5,320 | player_stats=153,877"
+  },
+  {
+    "check": "registry/IT1",
+    "status": "PASS",
+    "detail": "status=SUPPORTED | matches=5,320 | player_stats=155,187"
+  },
+  {
+    "check": "registry/L1",
+    "status": "PASS",
+    "detail": "status=SUPPORTED | matches=4,284 | player_stats=124,613"
+  },
+  {
+    "check": "registry/FR1",
+    "status": "PASS",
+    "detail": "status=SUPPORTED | matches=4,997 | player_stats=143,395"
+  },
+  {
+    "check": "model/artifact_exists",
+    "status": "PASS",
+    "detail": "0.78 MB - best_value_predictor.joblib"
+  },
+  {
+    "check": "model/loadable",
+    "status": "PASS",
+    "detail": "model_name=Model_B_HistGradientBoosting | version=1.0.0 | saved_at=2026-10-29T18:10:05.360890+00:00"
+  },
+  {
+    "check": "model/use_log_target",
+    "status": "INFO",
+    "detail": "use_log_target=True"
+  },
+  {
+    "check": "model/val_mae",
+    "status": "INFO",
+    "detail": "best_val_mae_eur=1,775,860"
+  },
+  {
+    "check": "model/features",
+    "status": "INFO",
+    "detail": "26 numeric + 6 categorical = 32 total features"
+  },
+  {
+    "check": "model/estimator_type",
+    "status": "PASS",
+    "detail": "Final estimator: HistGradientBoostingRegressor"
+  },
+  {
+    "check": "model/predict_sample",
+    "status": "PASS",
+    "detail": "Preds: ['985,709', '2,902,443', '3,339,898'] | Actuals: ['1,000,000', '5,000,000', '3,500,000']"
+  },
+  {
+    "check": "model/comparison_results",
+    "status": "PASS",
+    "detail": "6 model(s) in comparison file"
+  },
+  {
+    "check": "evaluation/global_metrics",
+    "status": "PASS",
+    "detail": "MAE=EUR1,994,896 | RMSE=EUR5,249,454 | R2=0.8332"
+  },
+  {
+    "check": "evaluation/league_GB1",
+    "status": "PASS",
+    "detail": "English Premier League | MAE=EUR5,955,962 | R2=0.7958 | n=1,035"
+  },
+  {
+    "check": "evaluation/league_ES1",
+    "status": "PASS",
+    "detail": "Spanish La Liga | MAE=EUR4,227,726 | R2=0.7631 | n=986"
+  },
+  {
+    "check": "evaluation/league_IT1",
+    "status": "PASS",
+    "detail": "Italian Serie A | MAE=EUR3,400,637 | R2=0.7796 | n=980"
+  },
+  {
+    "check": "evaluation/league_L1",
+    "status": "PASS",
+    "detail": "German Bundesliga | MAE=EUR3,259,844 | R2=0.8245 | n=851"
+  },
+  {
+    "check": "evaluation/league_FR1",
+    "status": "PASS",
+    "detail": "French Ligue 1 | MAE=EUR2,681,015 | R2=0.8281 | n=814"
+  },
+  {
+    "check": "predict/service_load",
+    "status": "PASS",
+    "detail": "ValuationPredictor instantiated successfully"
+  },
+  {
+    "check": "predict/normal_gb1",
+    "status": "PASS",
+    "detail": "Predicted EUR52,090,000 | warnings=1"
+  },
+  {
+    "check": "predict/cross_league_fr1_to_gb1",
+    "status": "PASS",
+    "detail": "Dest EUR37,500,000 | delta EUR-3,460,000 (-8.4%)"
+  },
+  {
+    "check": "predict/unknown_league_fallback",
+    "status": "PASS",
+    "detail": "EUR490,000 | coverage=UNAVAILABLE"
+  },
+  {
+    "check": "predict/no_prior_valuation",
+    "status": "PASS",
+    "detail": "EUR2,360,000 (no prior value)"
+  },
+  {
+    "check": "predict/league_GB1",
+    "status": "PASS",
+    "detail": "EUR17,540,000"
+  },
+  {
+    "check": "predict/league_ES1",
+    "status": "PASS",
+    "detail": "EUR18,210,000"
+  },
+  {
+    "check": "predict/league_IT1",
+    "status": "PASS",
+    "detail": "EUR18,270,000"
+  },
+  {
+    "check": "predict/league_L1",
+    "status": "PASS",
+    "detail": "EUR16,630,000"
+  },
+  {
+    "check": "predict/league_FR1",
+    "status": "PASS",
+    "detail": "EUR19,630,000"
+  },
+  {
+    "check": "predict/goalkeeper_it1",
+    "status": "PASS",
+    "detail": "EUR12,020,000"
+  },
+  {
+    "check": "predict/zero_minutes_edge",
+    "status": "PASS",
+    "detail": "EUR250,000 (zero minutes player)"
+  },
+  {
+    "check": "metadata/competition_registry.json",
+    "status": "PASS",
+    "detail": "Valid JSON | 47.0 KB"
+  },
+  {
+    "check": "metadata/source_inventory.json",
+    "status": "PASS",
+    "detail": "Valid JSON | 4.1 KB"
+  },
+  {
+    "check": "metadata/schema_report.json",
+    "status": "PASS",
+    "detail": "Valid JSON | 23.0 KB"
+  },
+  {
+    "check": "metadata/league_strength_ratings.json",
+    "status": "PASS",
+    "detail": "Valid JSON | 298.5 KB"
+  },
+  {
+    "check": "metadata/evaluation_results.json",
+    "status": "PASS",
+    "detail": "Valid JSON | 8.0 KB"
+  },
+  {
+    "check": "reproducibility/model_name_match",
+    "status": "PASS",
+    "detail": "eval='Model_B_HistGradientBoosting' | artifact='Model_B_HistGradientBoosting'"
+  },
+  {
+    "check": "docs/data_sources.md",
+    "status": "PASS",
+    "detail": "3,864 bytes"
+  },
+  {
+    "check": "docs/data_inventory.md",
+    "status": "PASS",
+    "detail": "9,516 bytes"
+  },
+  {
+    "check": "docs/data_dictionary.md",
+    "status": "PASS",
+    "detail": "6,098 bytes"
+  },
+  {
+    "check": "docs/methodology.md",
+    "status": "PASS",
+    "detail": "8,815 bytes"
+  },
+  {
+    "check": "docs/limitations.md",
+    "status": "PASS",
+    "detail": "4,034 bytes"
+  },
+  {
+    "check": "docs/model_evaluation.md",
+    "status": "PASS",
+    "detail": "4,747 bytes"
+  }
+]

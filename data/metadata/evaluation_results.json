@@ -1,0 +1,296 @@
+{
+  "evaluated_at": "2026-10-29T18:11:34.260829+00:00",
+  "model_version": "1.0.0",
+  "model_name": "Model_B_HistGradientBoosting",
+  "test_date_range": {
+    "min": "2023-12-05",
+    "max": "2025-07-11"
+  },
+  "test_sample_count": 12408,
+  "baseline_metrics": {
+    "sample_count": 12408,
+    "mae_eur": 5499848.08,
+    "rmse_eur": 13755779.65,
+    "median_ae_eur": 1000000.0,
+    "r2": -0.1453
+  },
+  "global_metrics": {
+    "sample_count": 12408,
+    "mae_eur": 1994895.87,
+    "rmse_eur": 5249453.94,
+    "median_ae_eur": 443018.5,
+    "r2": 0.8332,
+    "mae_relative_to_baseline_pct": 36.27
+  },
+  "competitions": {
+    "GB1": {
+      "sample_count": 1035,
+      "mae_eur": 5955961.89,
+      "rmse_eur": 10101560.53,
+      "median_ae_eur": 2924533.66,
+      "r2": 0.7958,
+      "mae_relative_to_baseline_pct": 29.01,
+      "competition_name": "premier-league",
+      "country": "England"
+    },
+    "ES1": {
+      "sample_count": 986,
+      "mae_eur": 4227725.78,
+      "rmse_eur": 10092382.53,
+      "median_ae_eur": 1290103.54,
+      "r2": 0.7631,
+      "mae_relative_to_baseline_pct": 44.85,
+      "competition_name": "laliga",
+      "country": "Spain"
+    },
+    "IT1": {
+      "sample_count": 980,
+      "mae_eur": 3400637.14,
+      "rmse_eur": 6247529.68,
+      "median_ae_eur": 1400774.7,
+      "r2": 0.7796,
+      "mae_relative_to_baseline_pct": 38.7,
+      "competition_name": "serie-a",
+      "country": "Italy"
+    },
+    "L1": {
+      "sample_count": 851,
+      "mae_eur": 3259844.49,
+      "rmse_eur": 6524883.95,
+      "median_ae_eur": 1229523.76,
+      "r2": 0.8245,
+      "mae_relative_to_baseline_pct": 34.97,
+      "competition_name": "bundesliga",
+      "country": "Germany"
+    },
+    "FR1": {
+      "sample_count": 814,
+      "mae_eur": 2681015.01,
+      "rmse_eur": 5682347.86,
+      "median_ae_eur": 1061601.97,
+      "r2": 0.8281,
+      "mae_relative_to_baseline_pct": 33.18,
+      "competition_name": "ligue-1",
+      "country": "France"
+    },
+    "NL1": {
+      "sample_count": 833,
+      "mae_eur": 1362276.44,
+      "rmse_eur": 3052642.2,
+      "median_ae_eur": 430422.71,
+      "r2": 0.7399,
+      "mae_relative_to_baseline_pct": 49.28,
+      "competition_name": "eredivisie",
+      "country": "Netherlands"
+    },
+    "PO1": {
+      "sample_count": 887,
+      "mae_eur": 1346193.92,
+      "rmse_eur": 3797513.12,
+      "median_ae_eur": 377415.66,
+      "r2": 0.7834,
+      "mae_relative_to_baseline_pct": 39.98,
+      "competition_name": "liga-portugal",
+      "country": "Portugal"
+    },
+    "BE1": {
+      "sample_count": 717,
+      "mae_eur": 1066357.3,
+      "rmse_eur": 2216445.83,
+      "median_ae_eur": 472457.4,
+      "r2": 0.644,
+      "mae_relative_to_baseline_pct": 50.68,
+      "competition_name": "jupiler-pro-league",
+      "country": "Belgium"
+    },
+    "TR1": {
+      "sample_count": 907,
+      "mae_eur": 912876.89,
+      "rmse_eur": 2107368.93,
+      "median_ae_eur": 392061.69,
+      "r2": 0.7291,
+      "mae_relative_to_baseline_pct": 50.16,
+      "competition_name": "super-lig",
+      "country": "T\u00fcrkiye"
+    },
+    "GR1": {
+      "sample_count": 702,
+      "mae_eur": 363661.75,
+      "rmse_eur": 1076979.41,
+      "median_ae_eur": 83942.47,
+      "r2": 0.765,
+      "mae_relative_to_baseline_pct": 28.7,
+      "competition_name": "super-league-1",
+      "country": "Greece"
+    },
+    "RU1": {
+      "sample_count": 809,
+      "mae_eur": 602013.21,
+      "rmse_eur": 1105163.87,
+      "median_ae_eur": 293928.24,
+      "r2": 0.8754,
+      "mae_relative_to_baseline_pct": 35.15,
+      "competition_name": "premier-liga",
+      "country": "Russia"
+    }
+  },
+  "positions": {
+    "Attack": {
+      "sample_count": 3415,
+      "mae_eur": 2465203.37,
+      "rmse_eur": 6683227.71,
+      "median_ae_eur": 516030.98,
+      "r2": 0.8151,
+      "mae_relative_to_baseline_pct": 44.82
+    },
+    "Defender": {
+      "sample_count": 4326,
+      "mae_eur": 1712187.6,
+      "rmse_eur": 4018050.84,
+      "median_ae_eur": 396820.46,
+      "r2": 0.8351,
+      "mae_relative_to_baseline_pct": 31.13
+    },
+    "Goalkeeper": {
+      "sample_count": 1088,
+      "mae_eur": 1105447.23,
+      "rmse_eur": 2611183.71,
+      "median_ae_eur": 249335.21,
+      "r2": 0.842,
+      "mae_relative_to_baseline_pct": 20.1
+    },
+    "Midfield": {
+      "sample_count": 3579,
+      "mae_eur": 2158242.05,
+      "rmse_eur": 5597348.11,
+      "median_ae_eur": 495880.92,
+      "r2": 0.848,
+      "mae_relative_to_baseline_pct": 39.24
+    }
+  },
+  "age_groups": {
+    "U21 (<21)": {
+      "sample_count": 1115,
+      "mae_eur": 3013673.03,
+      "rmse_eur": 7504440.44,
+      "median_ae_eur": 888887.66,
+      "r2": 0.6955,
+      "mae_relative_to_baseline_pct": 54.8
+    },
+    "21-24": {
+      "sample_count": 3709,
+      "mae_eur": 2666574.32,
+      "rmse_eur": 6417857.88,
+      "median_ae_eur": 638366.32,
+      "r2": 0.8247,
+      "mae_relative_to_baseline_pct": 48.48
+    },
+    "25-28": {
+      "sample_count": 3910,
+      "mae_eur": 2204746.77,
+      "rmse_eur": 5383816.43,
+      "median_ae_eur": 534204.67,
+      "r2": 0.8558,
+      "mae_relative_to_baseline_pct": 40.09
+    },
+    "29-32": {
+      "sample_count": 2537,
+      "mae_eur": 987635.3,
+      "rmse_eur": 2203671.52,
+      "median_ae_eur": 275181.77,
+      "r2": 0.9006,
+      "mae_relative_to_baseline_pct": 17.96
+    },
+    "33+": {
+      "sample_count": 1137,
+      "mae_eur": 330613.66,
+      "rmse_eur": 789314.2,
+      "median_ae_eur": 105725.05,
+      "r2": 0.8674,
+      "mae_relative_to_baseline_pct": 6.01
+    }
+  },
+  "value_bands": {
+    "< \u20ac1M": {
+      "sample_count": 4808,
+      "mae_eur": 226813.86,
+      "rmse_eur": 394741.09,
+      "median_ae_eur": 124462.49,
+      "r2": -1.8656,
+      "mae_relative_to_baseline_pct": 4.12
+    },
+    "\u20ac1M - \u20ac5M": {
+      "sample_count": 4146,
+      "mae_eur": 876730.63,
+      "rmse_eur": 1327483.74,
+      "median_ae_eur": 557838.46,
+      "r2": -0.7239,
+      "mae_relative_to_baseline_pct": 15.94
+    },
+    "\u20ac5M - \u20ac15M": {
+      "sample_count": 1968,
+      "mae_eur": 2800944.89,
+      "rmse_eur": 3761360.48,
+      "median_ae_eur": 2077526.82,
+      "r2": -1.0735,
+      "mae_relative_to_baseline_pct": 50.93
+    },
+    "\u20ac15M - \u20ac40M": {
+      "sample_count": 1120,
+      "mae_eur": 7103174.38,
+      "rmse_eur": 9456739.45,
+      "median_ae_eur": 5584799.27,
+      "r2": -1.1373,
+      "mae_relative_to_baseline_pct": 129.15
+    },
+    "\u20ac40M+": {
+      "sample_count": 366,
+      "mae_eur": 17921876.64,
+      "rmse_eur": 23716483.04,
+      "median_ae_eur": 14071329.6,
+      "r2": 0.326,
+      "mae_relative_to_baseline_pct": 325.86
+    }
+  },
+  "cross_league_movers": {
+    "movers": {
+      "sample_count": 2648,
+      "mae_eur": 2456900.11,
+      "rmse_eur": 6293008.23,
+      "median_ae_eur": 627656.04,
+      "r2": 0.8211,
+      "mae_relative_to_baseline_pct": 44.67
+    },
+    "non_movers": {
+      "sample_count": 4786,
+      "mae_eur": 2030936.27,
+      "rmse_eur": 5302826.48,
+      "median_ae_eur": 395855.68,
+      "r2": 0.874,
+      "mae_relative_to_baseline_pct": 36.93
+    }
+  },
+  "financial_sensitivity": {
+    "with_club_financials": {
+      "sample_count": 371,
+      "mae_eur": 9125195.68,
+      "rmse_eur": 15462107.4,
+      "median_ae_eur": 5349568.9,
+      "r2": 0.7428
+    },
+    "without_club_financials": {
+      "sample_count": 12037,
+      "mae_eur": 1775128.38,
+      "rmse_eur": 4586651.81,
+      "median_ae_eur": 418189.95,
+      "r2": 0.8216
+    }
+  },
+  "unseen_player_generalization": {
+    "sample_count": 13979,
+    "mae_eur": 1390297.94,
+    "rmse_eur": 3925609.35,
+    "median_ae_eur": 293110.02,
+    "r2": 0.8566
+  }
+}

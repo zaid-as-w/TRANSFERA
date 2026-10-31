@@ -1,0 +1,881 @@
+{
+  "generated_at": "2026-10-29T17:36:30.224464+00:00",
+  "tables": {
+    "competitions": {
+      "table_name": "competitions",
+      "record_count": 65,
+      "column_count": 11,
+      "duplicate_rows": 0,
+      "columns": {
+        "competition_id": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 65
+        },
+        "competition_code": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 62
+        },
+        "name": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 62
+        },
+        "sub_type": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 16
+        },
+        "type": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 5
+        },
+        "country_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 32
+        },
+        "country_name": {
+          "dtype": "object",
+          "null_count": 12,
+          "null_pct": 18.46,
+          "distinct_values": 31
+        },
+        "domestic_league_code": {
+          "dtype": "object",
+          "null_count": 12,
+          "null_pct": 18.46,
+          "distinct_values": 31
+        },
+        "confederation": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 5
+        },
+        "total_clubs": {
+          "dtype": "float64",
+          "null_count": 15,
+          "null_pct": 23.08,
+          "distinct_values": 7
+        },
+        "url": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 65
+        }
+      },
+      "date_range": null,
+      "distinct_competitions": 65
+    },
+    "clubs": {
+      "table_name": "clubs",
+      "record_count": 796,
+      "column_count": 17,
+      "duplicate_rows": 0,
+      "columns": {
+        "club_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 796
+        },
+        "club_code": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 796
+        },
+        "name": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 796
+        },
+        "domestic_competition_id": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 32
+        },
+        "total_market_value": {
+          "dtype": "float64",
+          "null_count": 796,
+          "null_pct": 100.0,
+          "distinct_values": 0
+        },
+        "squad_size": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 43
+        },
+        "average_age": {
+          "dtype": "float64",
+          "null_count": 38,
+          "null_pct": 4.77,
+          "distinct_values": 84
+        },
+        "foreigners_number": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 33
+        },
+        "foreigners_percentage": {
+          "dtype": "float64",
+          "null_count": 60,
+          "null_pct": 7.54,
+          "distinct_values": 279
+        },
+        "national_team_players": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 24
+        },
+        "stadium_name": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 760
+        },
+        "stadium_seats": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 658
+        },
+        "net_transfer_record": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 482
+        },
+        "coach_name": {
+          "dtype": "object",
+          "null_count": 393,
+          "null_pct": 49.37,
+          "distinct_values": 395
+        },
+        "last_season": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 14
+        },
+        "filename": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 14
+        },
+        "url": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 796
+        }
+      },
+      "date_range": null,
+      "distinct_clubs": 796
+    },
+    "players": {
+      "table_name": "players",
+      "record_count": 50149,
+      "column_count": 26,
+      "duplicate_rows": 0,
+      "columns": {
+        "player_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 50149
+        },
+        "first_name": {
+          "dtype": "object",
+          "null_count": 3164,
+          "null_pct": 6.31,
+          "distinct_values": 10800
+        },
+        "last_name": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 33876
+        },
+        "name": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 48825
+        },
+        "last_season": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 14
+        },
+        "current_club_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 1852
+        },
+        "player_code": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 48738
+        },
+        "country_of_birth": {
+          "dtype": "object",
+          "null_count": 5885,
+          "null_pct": 11.74,
+          "distinct_values": 211
+        },
+        "city_of_birth": {
+          "dtype": "object",
+          "null_count": 5608,
+          "null_pct": 11.18,
+          "distinct_values": 12335
+        },
+        "country_of_citizenship": {
+          "dtype": "object",
+          "null_count": 269,
+          "null_pct": 0.54,
+          "distinct_values": 202
+        },
+        "date_of_birth": {
+          "dtype": "object",
+          "null_count": 49,
+          "null_pct": 0.1,
+          "distinct_values": 10359
+        },
+        "sub_position": {
+          "dtype": "object",
+          "null_count": 586,
+          "null_pct": 1.17,
+          "distinct_values": 13
+        },
+        "position": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 5
+        },
+        "foot": {
+          "dtype": "object",
+          "null_count": 5893,
+          "null_pct": 11.75,
+          "distinct_values": 3
+        },
+        "height_in_cm": {
+          "dtype": "float64",
+          "null_count": 4365,
+          "null_pct": 8.7,
+          "distinct_values": 58
+        },
+        "contract_expiration_date": {
+          "dtype": "object",
+          "null_count": 18569,
+          "null_pct": 37.03,
+          "distinct_values": 241
+        },
+        "agent_name": {
+          "dtype": "object",
+          "null_count": 23296,
+          "null_pct": 46.45,
+          "distinct_values": 3954
+        },
+        "image_url": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 41061
+        },
+        "international_caps": {
+          "dtype": "float64",
+          "null_count": 30793,
+          "null_pct": 61.4,
+          "distinct_values": 159
+        },
+        "international_goals": {
+          "dtype": "float64",
+          "null_count": 30793,
+          "null_pct": 61.4,
+          "distinct_values": 68
+        },
+        "current_national_team_id": {
+          "dtype": "float64",
+          "null_count": 46889,
+          "null_pct": 93.5,
+          "distinct_values": 123
+        },
+        "url": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 50149
+        },
+        "current_club_domestic_competition_id": {
+          "dtype": "object",
+          "null_count": 2986,
+          "null_pct": 5.95,
+          "distinct_values": 32
+        },
+        "current_club_name": {
+          "dtype": "object",
+          "null_count": 2986,
+          "null_pct": 5.95,
+          "distinct_values": 793
+        },
+        "market_value_in_eur": {
+          "dtype": "float64",
+          "null_count": 8621,
+          "null_pct": 17.19,
+          "distinct_values": 121
+        },
+        "highest_market_value_in_eur": {
+          "dtype": "float64",
+          "null_count": 8621,
+          "null_pct": 17.19,
+          "distinct_values": 206
+        }
+      },
+      "date_range": null,
+      "distinct_players": 50149
+    },
+    "games": {
+      "table_name": "games",
+      "record_count": 88958,
+      "column_count": 23,
+      "duplicate_rows": 0,
+      "columns": {
+        "game_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 88958
+        },
+        "competition_id": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 70
+        },
+        "season": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 18
+        },
+        "round": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 128
+        },
+        "date": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 4445
+        },
+        "home_club_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 2980
+        },
+        "away_club_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 2634
+        },
+        "home_club_goals": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 16
+        },
+        "away_club_goals": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 18
+        },
+        "home_club_position": {
+          "dtype": "float64",
+          "null_count": 25377,
+          "null_pct": 28.53,
+          "distinct_values": 21
+        },
+        "away_club_position": {
+          "dtype": "float64",
+          "null_count": 25377,
+          "null_pct": 28.53,
+          "distinct_values": 21
+        },
+        "home_club_manager_name": {
+          "dtype": "object",
+          "null_count": 844,
+          "null_pct": 0.95,
+          "distinct_values": 6137
+        },
+        "away_club_manager_name": {
+          "dtype": "object",
+          "null_count": 844,
+          "null_pct": 0.95,
+          "distinct_values": 5756
+        },
+        "stadium": {
+          "dtype": "object",
+          "null_count": 242,
+          "null_pct": 0.27,
+          "distinct_values": 2968
+        },
+        "attendance": {
+          "dtype": "float64",
+          "null_count": 10803,
+          "null_pct": 12.14,
+          "distinct_values": 33301
+        },
+        "referee": {
+          "dtype": "object",
+          "null_count": 678,
+          "null_pct": 0.76,
+          "distinct_values": 3135
+        },
+        "url": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 88958
+        },
+        "home_club_formation": {
+          "dtype": "object",
+          "null_count": 8200,
+          "null_pct": 9.22,
+          "distinct_values": 57
+        },
+        "away_club_formation": {
+          "dtype": "object",
+          "null_count": 8073,
+          "null_pct": 9.08,
+          "distinct_values": 68
+        },
+        "home_club_name": {
+          "dtype": "object",
+          "null_count": 86,
+          "null_pct": 0.1,
+          "distinct_values": 2901
+        },
+        "away_club_name": {
+          "dtype": "object",
+          "null_count": 36,
+          "null_pct": 0.04,
+          "distinct_values": 2600
+        },
+        "aggregate": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 119
+        },
+        "competition_type": {
+          "dtype": "object",
+          "null_count": 1214,
+          "null_pct": 1.36,
+          "distinct_values": 5
+        }
+      },
+      "date_range": {
+        "field": "date",
+        "min": "2006-06-09",
+        "max": "2026-07-06"
+      },
+      "distinct_competitions": 70,
+      "distinct_seasons": [
+        2005,
+        2007,
+        2009,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    "appearances": {
+      "table_name": "appearances",
+      "record_count": 1894350,
+      "column_count": 13,
+      "duplicate_rows": 0,
+      "columns": {
+        "appearance_id": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 1894350
+        },
+        "game_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 73426
+        },
+        "player_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 29531
+        },
+        "player_club_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 1231
+        },
+        "player_current_club_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 1148
+        },
+        "date": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 4108
+        },
+        "player_name": {
+          "dtype": "object",
+          "null_count": 2,
+          "null_pct": 0.0,
+          "distinct_values": 28911
+        },
+        "competition_id": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 48
+        },
+        "yellow_cards": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 3
+        },
+        "red_cards": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 2
+        },
+        "goals": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 7
+        },
+        "assists": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 7
+        },
+        "minutes_played": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 123
+        }
+      },
+      "date_range": {
+        "field": "date",
+        "min": "2012-07-03",
+        "max": "2026-06-28"
+      },
+      "distinct_players": 29531,
+      "distinct_competitions": 48
+    },
+    "player_valuations": {
+      "table_name": "player_valuations",
+      "record_count": 656301,
+      "column_count": 6,
+      "duplicate_rows": 0,
+      "columns": {
+        "player_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 41528
+        },
+        "date": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 5749
+        },
+        "market_value_in_eur": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 426
+        },
+        "current_club_name": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 8055
+        },
+        "current_club_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 5424
+        },
+        "player_club_domestic_competition_id": {
+          "dtype": "object",
+          "null_count": 92973,
+          "null_pct": 14.17,
+          "distinct_values": 32
+        }
+      },
+      "date_range": {
+        "field": "date",
+        "min": "2000-01-20",
+        "max": "2026-06-12"
+      },
+      "distinct_players": 41528
+    },
+    "club_games": {
+      "table_name": "club_games",
+      "record_count": 177916,
+      "column_count": 11,
+      "duplicate_rows": 0,
+      "columns": {
+        "game_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 88958
+        },
+        "club_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 3274
+        },
+        "own_goals": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 18
+        },
+        "own_position": {
+          "dtype": "float64",
+          "null_count": 50754,
+          "null_pct": 28.53,
+          "distinct_values": 21
+        },
+        "own_manager_name": {
+          "dtype": "object",
+          "null_count": 1688,
+          "null_pct": 0.95,
+          "distinct_values": 7031
+        },
+        "opponent_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 3274
+        },
+        "opponent_goals": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 18
+        },
+        "opponent_position": {
+          "dtype": "float64",
+          "null_count": 50754,
+          "null_pct": 28.53,
+          "distinct_values": 21
+        },
+        "opponent_manager_name": {
+          "dtype": "object",
+          "null_count": 1688,
+          "null_pct": 0.95,
+          "distinct_values": 7031
+        },
+        "hosting": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 2
+        },
+        "is_win": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 2
+        }
+      },
+      "date_range": null,
+      "distinct_clubs": 3274
+    },
+    "transfers": {
+      "table_name": "transfers",
+      "record_count": 175165,
+      "column_count": 10,
+      "duplicate_rows": 0,
+      "columns": {
+        "player_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 23379
+        },
+        "transfer_date": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 5634
+        },
+        "transfer_season": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 35
+        },
+        "from_club_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 17408
+        },
+        "to_club_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 13208
+        },
+        "from_club_name": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 18285
+        },
+        "to_club_name": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 14086
+        },
+        "transfer_fee": {
+          "dtype": "float64",
+          "null_count": 61526,
+          "null_pct": 35.12,
+          "distinct_values": 1503
+        },
+        "market_value_in_eur": {
+          "dtype": "float64",
+          "null_count": 68160,
+          "null_pct": 38.91,
+          "distinct_values": 191
+        },
+        "player_name": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 23036
+        }
+      },
+      "date_range": {
+        "field": "transfer_date",
+        "min": "1993-07-01",
+        "max": "2030-06-30"
+      },
+      "distinct_players": 23379
+    },
+    "countries": {
+      "table_name": "countries",
+      "record_count": 124,
+      "column_count": 8,
+      "duplicate_rows": 0,
+      "columns": {
+        "country_id": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 124
+        },
+        "country_name": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 124
+        },
+        "country_code": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 124
+        },
+        "confederation": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 4
+        },
+        "total_clubs": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 14
+        },
+        "total_players": {
+          "dtype": "int64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 105
+        },
+        "average_age": {
+          "dtype": "float64",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 46
+        },
+        "url": {
+          "dtype": "object",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_values": 124
+        }
+      },
+      "date_range": null
+    }
+  }
+}

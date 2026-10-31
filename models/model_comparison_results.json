@@ -1,0 +1,326 @@
+{
+  "trained_at": "2026-10-29T18:06:28.797074+00:00",
+  "split_metadata": {
+    "train_count": 51774,
+    "val_count": 6219,
+    "test_count": 12408,
+    "train_seasons": [
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "val_seasons": [
+      2022
+    ],
+    "test_seasons": [
+      2023,
+      2024
+    ],
+    "train_date_min": "2013-11-05",
+    "train_date_max": "2022-07-01",
+    "val_date_min": "2022-11-01",
+    "val_date_max": "2023-07-12",
+    "test_date_min": "2023-12-05",
+    "test_date_max": "2025-07-11",
+    "train_unique_players": 16490,
+    "val_unique_players": 6186,
+    "test_unique_players": 8295
+  },
+  "baseline_metrics": {
+    "mae_eur": 4995147.93,
+    "rmse_eur": 12445804.47,
+    "median_ae_eur": 950000.0,
+    "r2": -0.1381
+  },
+  "models": {
+    "Model_A_Linear": {
+      "metrics": {
+        "mae_eur": 2010666118.3,
+        "rmse_eur": 118470268166.04,
+        "median_ae_eur": 750120.29,
+        "r2": -103123605.7274,
+        "mae_relative_to_baseline_pct": 40252.38,
+        "architecture": "Model A (Global Baseline)",
+        "use_log_target": true
+      },
+      "features_numeric": [
+        "age_at_reference_date",
+        "appearances",
+        "minutes_played",
+        "goals",
+        "assists",
+        "goals_per_90",
+        "assists_per_90",
+        "cards",
+        "cards_per_90",
+        "minutes_per_appearance",
+        "height_in_cm",
+        "previous_market_value",
+        "has_previous_valuation"
+      ],
+      "features_categorical": [
+        "position",
+        "sub_position",
+        "foot"
+      ]
+    },
+    "Model_A_Ridge": {
+      "metrics": {
+        "mae_eur": 2014923393.5,
+        "rmse_eur": 118734275601.69,
+        "median_ae_eur": 749574.57,
+        "r2": -103583733.5701,
+        "mae_relative_to_baseline_pct": 40337.61,
+        "architecture": "Model A (Global Baseline)",
+        "use_log_target": true
+      },
+      "features_numeric": [
+        "age_at_reference_date",
+        "appearances",
+        "minutes_played",
+        "goals",
+        "assists",
+        "goals_per_90",
+        "assists_per_90",
+        "cards",
+        "cards_per_90",
+        "minutes_per_appearance",
+        "height_in_cm",
+        "previous_market_value",
+        "has_previous_valuation"
+      ],
+      "features_categorical": [
+        "position",
+        "sub_position",
+        "foot"
+      ]
+    },
+    "Model_A_HistGradientBoosting": {
+      "metrics": {
+        "mae_eur": 1830783.18,
+        "rmse_eur": 4852580.61,
+        "median_ae_eur": 354155.54,
+        "r2": 0.827,
+        "mae_relative_to_baseline_pct": 36.65,
+        "architecture": "Model A (Global Baseline)",
+        "use_log_target": true
+      },
+      "features_numeric": [
+        "age_at_reference_date",
+        "appearances",
+        "minutes_played",
+        "goals",
+        "assists",
+        "goals_per_90",
+        "assists_per_90",
+        "cards",
+        "cards_per_90",
+        "minutes_per_appearance",
+        "height_in_cm",
+        "previous_market_value",
+        "has_previous_valuation"
+      ],
+      "features_categorical": [
+        "position",
+        "sub_position",
+        "foot"
+      ]
+    },
+    "Model_B_Ridge": {
+      "metrics": {
+        "mae_eur": 107341023.51,
+        "rmse_eur": 5666404423.45,
+        "median_ae_eur": 619259.06,
+        "r2": -235913.4195,
+        "mae_relative_to_baseline_pct": 2148.91,
+        "architecture": "Model B (Competition-Aware)",
+        "use_log_target": true
+      },
+      "features_numeric": [
+        "age_at_reference_date",
+        "appearances",
+        "minutes_played",
+        "goals",
+        "assists",
+        "goals_per_90",
+        "assists_per_90",
+        "cards",
+        "cards_per_90",
+        "minutes_per_appearance",
+        "height_in_cm",
+        "previous_market_value",
+        "has_previous_valuation",
+        "competition_strength",
+        "competition_mean_elo",
+        "competition_top4_strength",
+        "competition_spread_elo",
+        "club_elo",
+        "league_goals_per_match",
+        "league_cards_per_match",
+        "competitive_balance_index",
+        "club_revenue_eur",
+        "league_average_revenue_eur",
+        "has_club_financials",
+        "has_league_financials",
+        "source_coverage_score"
+      ],
+      "features_categorical": [
+        "position",
+        "sub_position",
+        "foot",
+        "competition_id",
+        "country_of_citizenship",
+        "financial_aggregation_level"
+      ]
+    },
+    "Model_B_HistGradientBoosting": {
+      "metrics": {
+        "mae_eur": 1775860.06,
+        "rmse_eur": 4668611.76,
+        "median_ae_eur": 376962.42,
+        "r2": 0.8399,
+        "mae_relative_to_baseline_pct": 35.55,
+        "architecture": "Model B (Competition-Aware)",
+        "use_log_target": true
+      },
+      "features_numeric": [
+        "age_at_reference_date",
+        "appearances",
+        "minutes_played",
+        "goals",
+        "assists",
+        "goals_per_90",
+        "assists_per_90",
+        "cards",
+        "cards_per_90",
+        "minutes_per_appearance",
+        "height_in_cm",
+        "previous_market_value",
+        "has_previous_valuation",
+        "competition_strength",
+        "competition_mean_elo",
+        "competition_top4_strength",
+        "competition_spread_elo",
+        "club_elo",
+        "league_goals_per_match",
+        "league_cards_per_match",
+        "competitive_balance_index",
+        "club_revenue_eur",
+        "league_average_revenue_eur",
+        "has_club_financials",
+        "has_league_financials",
+        "source_coverage_score"
+      ],
+      "features_categorical": [
+        "position",
+        "sub_position",
+        "foot",
+        "competition_id",
+        "country_of_citizenship",
+        "financial_aggregation_level"
+      ]
+    },
+    "Model_B_RandomForest": {
+      "metrics": {
+        "mae_eur": 1863806.11,
+        "rmse_eur": 4932633.11,
+        "median_ae_eur": 404118.72,
+        "r2": 0.8212,
+        "mae_relative_to_baseline_pct": 37.31,
+        "architecture": "Model B (Competition-Aware)",
+        "use_log_target": true
+      },
+      "features_numeric": [
+        "age_at_reference_date",
+        "appearances",
+        "minutes_played",
+        "goals",
+        "assists",
+        "goals_per_90",
+        "assists_per_90",
+        "cards",
+        "cards_per_90",
+        "minutes_per_appearance",
+        "height_in_cm",
+        "previous_market_value",
+        "has_previous_valuation",
+        "competition_strength",
+        "competition_mean_elo",
+        "competition_top4_strength",
+        "competition_spread_elo",
+        "club_elo",
+        "league_goals_per_match",
+        "league_cards_per_match",
+        "competitive_balance_index",
+        "club_revenue_eur",
+        "league_average_revenue_eur",
+        "has_club_financials",
+        "has_league_financials",
+        "source_coverage_score"
+      ],
+      "features_categorical": [
+        "position",
+        "sub_position",
+        "foot",
+        "competition_id",
+        "country_of_citizenship",
+        "financial_aggregation_level"
+      ]
+    },
+    "Model_C_CompetitionAdjusted_GBM": {
+      "metrics": {
+        "mae_eur": 1786301.91,
+        "rmse_eur": 4730320.98,
+        "median_ae_eur": 366016.3,
+        "r2": 0.8356,
+        "mae_relative_to_baseline_pct": 35.76,
+        "architecture": "Model C (Competition-Adjusted)",
+        "use_log_target": true
+      },
+      "features_numeric": [
+        "age_at_reference_date",
+        "appearances",
+        "minutes_played",
+        "goals",
+        "assists",
+        "goals_per_90",
+        "assists_per_90",
+        "cards",
+        "cards_per_90",
+        "minutes_per_appearance",
+        "height_in_cm",
+        "previous_market_value",
+        "has_previous_valuation",
+        "competition_strength",
+        "competition_mean_elo",
+        "competition_top4_strength",
+        "competition_spread_elo",
+        "club_elo",
+        "league_goals_per_match",
+        "league_cards_per_match",
+        "competitive_balance_index",
+        "club_revenue_eur",
+        "league_average_revenue_eur",
+        "has_club_financials",
+        "has_league_financials",
+        "source_coverage_score"
+      ],
+      "features_categorical": [
+        "position",
+        "sub_position",
+        "foot",
+        "competition_id",
+        "country_of_citizenship",
+        "financial_aggregation_level"
+      ]
+    }
+  },
+  "best_model_name": "Model_B_HistGradientBoosting",
+  "best_val_mae_eur": 1775860.06
+}

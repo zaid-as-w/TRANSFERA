@@ -1,0 +1,27 @@
+competition_id,competition_name,country,season,currency,total_league_revenue_eur,average_club_revenue_eur,broadcast_pool_eur,financial_source
+GB1,Premier League,England,2023,EUR,6900000000,345000000,3900000000,UEFA European Club Finance Landscape 2024
+ES1,LaLiga,Spain,2023,EUR,3500000000,175000000,1900000000,UEFA European Club Finance Landscape 2024
+L1,Bundesliga,Germany,2023,EUR,3800000000,211000000,1500000000,UEFA European Club Finance Landscape 2024
+IT1,Serie A,Italy,2023,EUR,2900000000,145000000,1300000000,UEFA European Club Finance Landscape 2024
+FR1,Ligue 1,France,2023,EUR,2400000000,133000000,700000000,UEFA European Club Finance Landscape 2024
+GB1,Premier League,England,2022,EUR,6500000000,325000000,3800000000,UEFA European Club Finance Landscape 2023
+ES1,LaLiga,Spain,2022,EUR,3300000000,165000000,1900000000,UEFA European Club Finance Landscape 2023
+L1,Bundesliga,Germany,2022,EUR,3600000000,200000000,1500000000,UEFA European Club Finance Landscape 2023
+IT1,Serie A,Italy,2022,EUR,2600000000,130000000,1250000000,UEFA European Club Finance Landscape 2023
+FR1,Ligue 1,France,2022,EUR,2000000000,100000000,680000000,UEFA European Club Finance Landscape 2023
+GB1,Premier League,England,2021,EUR,6100000000,305000000,3600000000,UEFA European Club Finance Landscape 2022
+ES1,LaLiga,Spain,2021,EUR,2900000000,145000000,1750000000,UEFA European Club Finance Landscape 2022
+L1,Bundesliga,Germany,2021,EUR,3000000000,166000000,1400000000,UEFA European Club Finance Landscape 2022
+IT1,Serie A,Italy,2021,EUR,2300000000,115000000,1100000000,UEFA European Club Finance Landscape 2022
+FR1,Ligue 1,France,2021,EUR,1700000000,85000000,600000000,UEFA European Club Finance Landscape 2022
+GB1,Premier League,England,2020,EUR,5100000000,255000000,3100000000,UEFA European Club Finance Landscape 2021
+ES1,LaLiga,Spain,2020,EUR,2800000000,140000000,1700000000,UEFA European Club Finance Landscape 2021
+L1,Bundesliga,Germany,2020,EUR,3050000000,169000000,1400000000,UEFA European Club Finance Landscape 2021
+IT1,Serie A,Italy,2020,EUR,2100000000,105000000,1050000000,UEFA European Club Finance Landscape 2021
+FR1,Ligue 1,France,2020,EUR,1600000000,80000000,550000000,UEFA European Club Finance Landscape 2021
+NL1,Eredivisie,Netherlands,2023,EUR,650000000,36000000,120000000,UEFA European Club Finance Landscape 2024
+PO1,Liga Portugal,Portugal,2023,EUR,520000000,28000000,160000000,UEFA European Club Finance Landscape 2024
+BE1,Jupiler Pro League,Belgium,2023,EUR,430000000,26000000,105000000,UEFA European Club Finance Landscape 2024
+TR1,Süper Lig,Türkiye,2023,EUR,450000000,22500000,115000000,UEFA European Club Finance Landscape 2024
+SC1,Scottish Premiership,Scotland,2023,EUR,280000000,23000000,45000000,UEFA European Club Finance Landscape 2024
+

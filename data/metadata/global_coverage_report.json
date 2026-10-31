@@ -1,0 +1,36 @@
+{
+  "total_global_player_records_acquired": 97878,
+  "unique_verified_player_count": 97878,
+  "number_of_duplicate_identities_resolved": 6313,
+  "number_of_unresolved_identities": 0,
+  "total_competitions_registered": 89,
+  "number_of_supported_competitions": 32,
+  "number_of_partial_competitions": 20,
+  "number_of_competitions_with_insufficient_data": 37,
+  "number_of_players_with_verified_historical_market_valuations": 41528,
+  "number_of_players_with_season_statistics": 20683,
+  "number_of_players_eligible_for_ml_prediction": 20680,
+  "number_of_players_available_for_profile_only_search": 47727,
+  "provider_breakdown": {
+    "hybrid_multi_provider": 6313,
+    "transfermarkt_primary": 43836,
+    "reep_global_registry": 47727,
+    "api_football_statsbomb": 2
+  },
+  "api_usage_and_costs": {
+    "api_football": "Free/Community tier (10 requests/min throttle, 0 USD incurred, cached fixtures)",
+    "reep_register": "Open Access GitHub Repository (0 USD, fully downloaded)",
+    "statsbomb_open_data": "Open Access GitHub Repository (0 USD)",
+    "fbref_compliance": "Direct scraping skipped per robots.txt & ToS; verified entity crosswalk used"
+  },
+  "data_integrity_guarantees": {
+    "synthetic_valuations_generated": 0,
+    "synthetic_statistics_generated": 0,
+    "stage1_model_modifications": 0
+  },
+  "remaining_data_gaps": [
+    "Domestic transfer expenditure and wage bills for Asian and African tier-2 competitions",
+    "Historical market valuations for non-European domestic leagues prior to 2018",
+    "Official match event tracking for semi-professional leagues outside FIFA-affiliated top flights"
+  ]
+}

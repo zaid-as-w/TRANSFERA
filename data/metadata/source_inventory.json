@@ -1,0 +1,141 @@
+{
+  "source_name": "Transfermarkt Datasets (dcaribou/transfermarkt-datasets)",
+  "source_repository": "https://github.com/dcaribou/transfermarkt-datasets",
+  "data_distribution_url": "https://pub-e682421888d945d684bcae8890b0ec20.r2.dev/data/",
+  "generated_at": "2026-10-29T17:36:30.224495+00:00",
+  "tables": {
+    "competitions": {
+      "file_name": "competitions.csv.gz",
+      "file_format": "csv.gz",
+      "file_size_bytes": 2242,
+      "record_count": 65,
+      "column_count": 11,
+      "duplicate_rows": 0,
+      "date_range": null,
+      "distinct_players": null,
+      "distinct_clubs": null,
+      "distinct_competitions": 65,
+      "usable_for_training": true
+    },
+    "clubs": {
+      "file_name": "clubs.csv.gz",
+      "file_format": "csv.gz",
+      "file_size_bytes": 51281,
+      "record_count": 796,
+      "column_count": 17,
+      "duplicate_rows": 0,
+      "date_range": null,
+      "distinct_players": null,
+      "distinct_clubs": 796,
+      "distinct_competitions": null,
+      "usable_for_training": true
+    },
+    "players": {
+      "file_name": "players.csv.gz",
+      "file_format": "csv.gz",
+      "file_size_bytes": 4389958,
+      "record_count": 50149,
+      "column_count": 26,
+      "duplicate_rows": 0,
+      "date_range": null,
+      "distinct_players": 50149,
+      "distinct_clubs": null,
+      "distinct_competitions": null,
+      "usable_for_training": true
+    },
+    "games": {
+      "file_name": "games.csv.gz",
+      "file_format": "csv.gz",
+      "file_size_bytes": 4995595,
+      "record_count": 88958,
+      "column_count": 23,
+      "duplicate_rows": 0,
+      "date_range": {
+        "field": "date",
+        "min": "2006-06-09",
+        "max": "2026-07-06"
+      },
+      "distinct_players": null,
+      "distinct_clubs": null,
+      "distinct_competitions": 70,
+      "usable_for_training": true
+    },
+    "appearances": {
+      "file_name": "appearances.csv.gz",
+      "file_format": "csv.gz",
+      "file_size_bytes": 45253638,
+      "record_count": 1894350,
+      "column_count": 13,
+      "duplicate_rows": 0,
+      "date_range": {
+        "field": "date",
+        "min": "2012-07-03",
+        "max": "2026-06-28"
+      },
+      "distinct_players": 29531,
+      "distinct_clubs": null,
+      "distinct_competitions": 48,
+      "usable_for_training": true
+    },
+    "player_valuations": {
+      "file_name": "player_valuations.csv.gz",
+      "file_format": "csv.gz",
+      "file_size_bytes": 7197935,
+      "record_count": 656301,
+      "column_count": 6,
+      "duplicate_rows": 0,
+      "date_range": {
+        "field": "date",
+        "min": "2000-01-20",
+        "max": "2026-06-12"
+      },
+      "distinct_players": 41528,
+      "distinct_clubs": null,
+      "distinct_competitions": null,
+      "usable_for_training": true
+    },
+    "club_games": {
+      "file_name": "club_games.csv.gz",
+      "file_format": "csv.gz",
+      "file_size_bytes": 2138062,
+      "record_count": 177916,
+      "column_count": 11,
+      "duplicate_rows": 0,
+      "date_range": null,
+      "distinct_players": null,
+      "distinct_clubs": 3274,
+      "distinct_competitions": null,
+      "usable_for_training": true
+    },
+    "transfers": {
+      "file_name": "transfers.csv.gz",
+      "file_format": "csv.gz",
+      "file_size_bytes": 5809514,
+      "record_count": 175165,
+      "column_count": 10,
+      "duplicate_rows": 0,
+      "date_range": {
+        "field": "transfer_date",
+        "min": "1993-07-01",
+        "max": "2030-06-30"
+      },
+      "distinct_players": 23379,
+      "distinct_clubs": null,
+      "distinct_competitions": null,
+      "usable_for_training": true
+    },
+    "countries": {
+      "file_name": "countries.csv.gz",
+      "file_format": "csv.gz",
+      "file_size_bytes": 2878,
+      "record_count": 124,
+      "column_count": 8,
+      "duplicate_rows": 0,
+      "date_range": null,
+      "distinct_players": null,
+      "distinct_clubs": null,
+      "distinct_competitions": null,
+      "usable_for_training": true
+    }
+  }
+}

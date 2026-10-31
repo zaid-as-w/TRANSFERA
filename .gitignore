@@ -1,0 +1,50 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Secrets & Environment Variables
+.env
+.streamlit/secrets.toml
+
+# Testing and linters
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary & prompt dumps
+user_prompt*.txt
+*.tmp
+
+# Large raw datasets & heavy intermediate partitions (>10MB)
+data/raw/transfermarkt/*.csv.gz
+data/raw/transfermarkt/*.csv
+data/external/reep/*.csv
+data/interim/clean_appearances.parquet
+data/processed/expanded_player_season_features.parquet
+
+# Keep directories and lightweight core files tracked
+!data/raw/transfermarkt/.gitkeep
+!data/raw/financial/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!data/metadata/.gitkeep
+!models/.gitkeep
