@@ -11,6 +11,10 @@ requires-python = ">=3.11"
 authors = [
     { name = "Antigravity Engineering" }
 ]
+
+[project.urls]
+"Live App" = "https://transfera.streamlit.app"
+"Repository" = "https://github.com/zaid-as-w/TRANSFERA"
 dependencies = [
     "streamlit>=1.35.0",
     "plotly>=5.18.0",

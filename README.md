@@ -5,11 +5,15 @@
 **THE GLOBAL GAME. DECODED.**  
 *Player Valuations · Transfer Insights · League Analytics · AI-Powered Football Intelligence*
 
+[![Live App](https://img.shields.io/badge/Live%20App-transfera.streamlit.app-02BFD0?style=for-the-badge&logo=streamlit&logoColor=white)](https://transfera.streamlit.app)
+
 [![Tests](https://img.shields.io/badge/Tests-59%20Passed-20A56B.svg?style=flat-square)](tests/)
 [![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12%20%7C%203.13-02BFD0.svg?style=flat-square)](https://www.python.org/)
 [![Model](https://img.shields.io/badge/Model-HistGradientBoosting%20Champion-018591.svg?style=flat-square)](models/)
 [![Framework](https://img.shields.io/badge/Dashboard-Streamlit-FF4B4B.svg?style=flat-square)](app.py)
 [![Code Style](https://img.shields.io/badge/Linter-Ruff%20Clean-20A56B.svg?style=flat-square)](pyproject.toml)
+
+🌐 **Live Web Application**: [https://transfera.streamlit.app](https://transfera.streamlit.app)
 
 </div>
 
@@ -137,9 +141,17 @@ TRANSFERA/
 
 ---
 
-## 5. Quickstart & Installation
+## 5. Quickstart & Deployment
 
-### 1. Clone the Repository
+### 🌐 Live Platform Access
+Access the live production instance directly in your browser:  
+👉 **[https://transfera.streamlit.app](https://transfera.streamlit.app)**
+
+---
+
+### Local Installation & Development
+
+#### 1. Clone the Repository
 ```bash
 git clone https://github.com/zaid-as-w/TRANSFERA.git
 cd TRANSFERA
