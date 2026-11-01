@@ -1,9 +1,26 @@
 """Model Registry module for managing serialized ML pipelines and metadata."""
 
 import logging
+import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
+
+# Ensure backward compatibility when unpickling HistGradientBoostingRegressor models
+# across scikit-learn versions where internal loss module path differed
+try:
+    import sklearn._loss.loss as _sk_loss_loss
+
+    if "_loss" not in sys.modules:
+        sys.modules["_loss"] = _sk_loss_loss
+except Exception:
+    try:
+        import sklearn.ensemble._hist_gradient_boosting._loss as _sk_hgbr_loss
+
+        if "_loss" not in sys.modules:
+            sys.modules["_loss"] = _sk_hgbr_loss
+    except Exception:
+        pass
 
 import joblib
 
