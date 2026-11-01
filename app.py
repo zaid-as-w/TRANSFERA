@@ -28,6 +28,17 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+# Synchronize Streamlit Secrets to environment variables if present
+try:
+    if hasattr(st, "secrets"):
+        import os
+
+        for _k, _v in st.secrets.items():
+            if isinstance(_v, str):
+                os.environ.setdefault(_k, _v)
+except Exception:
+    pass
+
 # Set up logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("transfera")
