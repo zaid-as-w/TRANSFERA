@@ -13,7 +13,7 @@ from dashboard.components.header import render_header
 from dashboard.components.player_card import render_top_players_table
 from dashboard.components.prediction_card import render_prediction_card
 from dashboard.data_service import DataService
-from dashboard.image_service import get_player_image_url
+from dashboard.image_service import get_fallback_image, get_player_image_url
 from dashboard.prediction_service import DashboardPredictionService
 
 HAALAND_CUTOUT_URL = "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=500&auto=format&fit=crop&q=80"
@@ -205,10 +205,11 @@ def render_home_page(data_service: DataService, pred_service: DashboardPredictio
             p_img = CUSTOM_SCOUT_URL
             p_display_name = "Custom Prospect"
 
+        player_fallback = get_fallback_image("player")
         hero_art_html = (
             '<div style="text-align:center;padding:0.4rem 0;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">'
             f'<div style="position:relative;width:140px;height:175px;border-radius:8px;overflow:hidden;border:1px solid #E2E6E9;box-shadow:0 2px 8px rgba(0,0,0,0.06);background:#F8F9FA;">'
-            f'<img src="{p_img}" style="width:100%;height:100%;object-fit:cover;" onerror="this.src=\'{HAALAND_CUTOUT_URL}\';"/>'
+            f'<img src="{p_img}" style="width:100%;height:100%;object-fit:cover;" onerror="this.onerror=null; this.src=\'{player_fallback}\';"/>'
             "</div>"
             f"<div style=\"font-family:'Manrope',sans-serif;font-size:1.05rem;font-weight:700;color:#17212B;margin-top:0.45rem;\">{p_display_name}</div>"
             "</div>"

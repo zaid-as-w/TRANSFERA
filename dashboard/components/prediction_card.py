@@ -3,7 +3,7 @@
 import streamlit as st
 
 from dashboard.formatting import format_currency_eur, format_delta_eur, format_delta_pct
-from dashboard.image_service import get_club_crest_url
+from dashboard.image_service import get_club_crest_url, get_fallback_image
 from src.predict import ValuationResult
 
 
@@ -17,6 +17,7 @@ def render_prediction_card(
     pred_val = result.predicted_value_eur
     pred_str = format_currency_eur(pred_val)
     crest_url = get_club_crest_url(club_id)
+    c_fallback = get_fallback_image("club")
     benchmark_mae = result.empirical_benchmark_mae_eur
 
     # Delta vs actual or prior baseline if available
@@ -48,7 +49,7 @@ def render_prediction_card(
         f'<div class="tm-card" style="text-align:center;border-top:3.5px solid #02BFD0;padding:1.25rem 1rem;">'
         f'<div style="font-size:0.72rem;font-weight:700;letter-spacing:1px;color:#02BFD0;text-transform:uppercase;margin-bottom:0.3rem;">PREDICTED MARKET VALUE</div>'
         f'<div style="display:flex;align-items:center;justify-content:center;gap:0.45rem;margin-bottom:0.6rem;">'
-        f'<img src="{crest_url}" style="width:18px;height:18px;object-fit:contain;" onerror="this.style.display=\'none\';"/>'
+        f'<img src="{crest_url}" style="width:18px;height:18px;object-fit:contain;" onerror="this.onerror=null; this.src=\'{c_fallback}\';"/>'
         f'<span style="font-size:0.85rem;color:#66727D;font-weight:600;">{club_title}</span>'
         f"</div>"
         f"<div style=\"font-size:2.3rem;font-weight:800;color:#17212B;font-family:'Manrope',sans-serif;line-height:1.1;letter-spacing:-0.5px;\">{pred_str}</div>"

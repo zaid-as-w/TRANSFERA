@@ -12,7 +12,7 @@ from dashboard.components.prediction_card import render_prediction_card
 from dashboard.data_service import DataService
 from dashboard.formatting import format_currency_eur, format_delta_eur, format_delta_pct
 from dashboard.global_player_profile import render_global_player_profile
-from dashboard.image_service import get_club_crest_url, get_player_image_url
+from dashboard.image_service import get_club_crest_url, get_fallback_image, get_player_image_url
 from dashboard.prediction_service import DashboardPredictionService
 
 
@@ -160,15 +160,15 @@ def render_predictor_page(data_service: DataService, pred_service: DashboardPred
 
         with col_meta:
             if selected_match:
+                p_fallback = get_fallback_image("player")
+                c_fallback = get_fallback_image("club")
                 if is_global_match:
                     p_name = selected_match.name
                     c_name = selected_match.current_club_name
-                    img_url = (
-                        selected_match.image_url or "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=300"
-                    )
+                    img_url = get_player_image_url(None, selected_match.image_url)
                     meta_html = (
                         f'<div class="tm-card" style="padding:1rem;text-align:center;">'
-                        f'<img src="{img_url}" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:2px solid #FFE082;margin-bottom:0.4rem;" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=300\';"/>'
+                        f'<img src="{img_url}" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:2px solid #FFE082;margin-bottom:0.4rem;background:#F8F9FA;" onerror="this.onerror=null; this.src=\'{p_fallback}\';"/>'
                         f"<div style=\"font-weight:700;font-size:1rem;color:#17212B;font-family:'Manrope',sans-serif;\">{p_name}</div>"
                         f'<div style="font-size:0.75rem;color:#B26A00;margin-top:0.2rem;font-weight:600;">GLOBAL CATALOG RECORD</div>'
                         f'<div style="font-size:0.78rem;color:#66727D;">{c_name}</div>'
@@ -192,10 +192,10 @@ def render_predictor_page(data_service: DataService, pred_service: DashboardPred
                     crest_url = get_club_crest_url(c_id)
                     meta_html = (
                         f'<div class="tm-card" style="padding:1rem;text-align:center;">'
-                        f'<img src="{img_url}" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:2px solid #02BFD0;margin-bottom:0.4rem;" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=300\';"/>'
+                        f'<img src="{img_url}" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:2px solid #02BFD0;margin-bottom:0.4rem;background:#F8F9FA;" onerror="this.onerror=null; this.src=\'{p_fallback}\';"/>'
                         f"<div style=\"font-weight:700;font-size:1rem;color:#17212B;font-family:'Manrope',sans-serif;\">{p_name}</div>"
                         f'<div style="display:flex;align-items:center;justify-content:center;gap:0.4rem;margin-top:0.2rem;">'
-                        f'<img src="{crest_url}" style="width:16px;height:16px;object-fit:contain;" onerror="this.style.display=\'none\';"/>'
+                        f'<img src="{crest_url}" style="width:16px;height:16px;object-fit:contain;" onerror="this.onerror=null; this.src=\'{c_fallback}\';"/>'
                         f'<span style="font-size:0.78rem;color:#66727D;">{c_name}</span>'
                         f"</div>"
                         f"</div>"

@@ -11,6 +11,7 @@ headless = true
 enableCORS = false
 enableXsrfProtection = false
 runOnSave = true
+enableStaticServing = true
 
 [browser]
 gatherUsageStats = false

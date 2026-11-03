@@ -38,7 +38,15 @@ def load_processed_features() -> pd.DataFrame:
 
 @st.cache_data(show_spinner=False)
 def load_player_image_map() -> dict[int, str]:
-    """Load player_id -> image_url mapping from raw players table."""
+    """Load player_id -> image_url mapping from metadata parquet or raw players table."""
+    pq_path = METADATA_DIR / "player_image_map.parquet"
+    if pq_path.exists():
+        try:
+            pdf = pd.read_parquet(pq_path)
+            return dict(zip(pdf["player_id"].astype("int64"), pdf["image_url"], strict=False))
+        except Exception as e:
+            logger.warning("Could not load player_image_map.parquet: %s", e)
+
     p_path = RAW_TM_DIR / "players.csv.gz"
     if not p_path.exists():
         return {}

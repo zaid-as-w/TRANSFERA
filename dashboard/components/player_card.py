@@ -6,7 +6,7 @@ import pandas as pd
 import streamlit as st
 
 from dashboard.formatting import format_currency_eur, get_country_flag
-from dashboard.image_service import get_club_crest_url, get_player_image_url
+from dashboard.image_service import get_club_crest_url, get_fallback_image, get_player_image_url
 
 
 def render_scout_card(player: dict[str, Any], key_suffix: str = "") -> None:
@@ -22,6 +22,8 @@ def render_scout_card(player: dict[str, Any], key_suffix: str = "") -> None:
     age = int(player.get("age", player.get("age_at_reference_date", 24)))
     goals = int(player.get("goals", 0))
     assists = int(player.get("assists", 0))
+    p_fallback = get_fallback_image("player")
+    c_fallback = get_fallback_image("club")
 
     html = (
         f'<div class="player-scout-card">'
@@ -30,12 +32,12 @@ def render_scout_card(player: dict[str, Any], key_suffix: str = "") -> None:
         f'<div class="player-val-badge">{val_str}</div>'
         f"</div>"
         f'<div class="player-photo-container">'
-        f'<img src="{img_url}" alt="{p_name}" onerror="this.onerror=null; this.src=\'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=300\';"/>'
+        f'<img src="{img_url}" alt="{p_name}" onerror="this.onerror=null; this.src=\'{p_fallback}\';"/>'
         f"</div>"
         f'<div style="text-align:center;margin-top:0.5rem;">'
         f"<div style=\"font-weight:700;font-size:1rem;color:#17212B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:'Manrope',sans-serif;\">{p_name}</div>"
         f'<div style="display:flex;align-items:center;justify-content:center;gap:0.4rem;margin-top:0.2rem;">'
-        f'<img src="{crest_url}" style="width:16px;height:16px;object-fit:contain;" onerror="this.style.display=\'none\';"/>'
+        f'<img src="{crest_url}" style="width:16px;height:16px;object-fit:contain;" onerror="this.onerror=null; this.src=\'{c_fallback}\';"/>'
         f'<span style="font-size:0.78rem;color:#66727D;">{c_name}</span>'
         f"</div>"
         f"</div>"
@@ -74,16 +76,18 @@ def render_top_players_table(top_df: pd.DataFrame) -> None:
         p_name = row["name"]
         club_name = row.get("current_club_name", "Unknown")
 
+        p_fallback = get_fallback_image("player")
+        c_fallback = get_fallback_image("club")
         row_html = (
             f"<tr>"
             f'<td style="font-weight:700;color:#8A959E;width:24px;padding:6px 4px;font-size:0.8rem;">{rank}</td>'
             f'<td style="display:flex;align-items:center;gap:0.45rem;padding:6px 4px;">'
-            f'<img src="{img_url}" style="width:26px;height:26px;border-radius:50%;object-fit:cover;border:1px solid #E2E6E9;" onerror="this.src=\'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100\';"/>'
+            f'<img src="{img_url}" style="width:26px;height:26px;border-radius:50%;object-fit:cover;border:1px solid #E2E6E9;background:#F8F9FA;" onerror="this.onerror=null; this.src=\'{p_fallback}\';"/>'
             f'<span style="font-weight:600;color:#17212B;font-size:0.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:115px;">{p_name}</span>'
             f"</td>"
             f'<td style="padding:6px 4px;">'
             f'<div style="display:flex;align-items:center;gap:0.3rem;">'
-            f'<img src="{crest_url}" style="width:14px;height:14px;object-fit:contain;" onerror="this.style.display=\'none\';"/>'
+            f'<img src="{crest_url}" style="width:14px;height:14px;object-fit:contain;" onerror="this.onerror=null; this.src=\'{c_fallback}\';"/>'
             f'<span style="font-size:0.75rem;color:#66727D;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:90px;">{club_name}</span>'
             f"</div>"
             f"</td>"

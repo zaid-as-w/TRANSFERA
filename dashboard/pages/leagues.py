@@ -9,7 +9,7 @@ from dashboard.components.header import render_header
 from dashboard.components.player_card import render_scout_card
 from dashboard.data_service import DataService
 from dashboard.formatting import format_currency_eur, get_country_flag
-from dashboard.image_service import get_competition_logo_url
+from dashboard.image_service import get_competition_logo_url, get_fallback_image
 from dashboard.prediction_service import DashboardPredictionService
 
 
@@ -80,6 +80,7 @@ def render_leagues_page(data_service: DataService, pred_service: DashboardPredic
     comp_info = next((c for c in all_comps if c["id"] == sel_comp_id), {"name": sel_comp_id, "country": "Global"})
     flag = get_country_flag(comp_info.get("country"))
     logo_url = get_competition_logo_url(sel_comp_id)
+    comp_fallback = get_fallback_image("competition")
 
     ratings_dict = data_service.league_strengths.get("league_ratings", {})
     comp_strength = ratings_dict.get(sel_comp_id, {})
@@ -94,7 +95,7 @@ def render_leagues_page(data_service: DataService, pred_service: DashboardPredic
         <div class="tm-card" style="padding: 1.2rem; margin-bottom: 1.2rem;">
             <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
                 <div style="display: flex; align-items: center; gap: 1rem;">
-                    <img src="{logo_url}" style="width: 48px; height: 48px; object-fit: contain;" onerror="this.style.display='none';"/>
+                    <img src="{logo_url}" style="width: 48px; height: 48px; object-fit: contain; background:#F8F9FA; border-radius:6px; padding:2px;" onerror="this.onerror=null; this.src='{comp_fallback}';"/>
                     <div>
                         <div style="font-size: 1.4rem; font-weight: 800; color: #17212B; font-family:'Manrope',sans-serif;">
                             {flag} {comp_info["name"]}
