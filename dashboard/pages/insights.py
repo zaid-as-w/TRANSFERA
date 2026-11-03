@@ -34,57 +34,50 @@ def render_insights_page(data_service: DataService, pred_service: DashboardPredi
     )
 
     # 1. Champion Model Scorecard
-    st.markdown(
-        f"""
-        <div class="tm-card" style="padding: 1.25rem; margin-bottom: 1.25rem; border-left: 4px solid #02BFD0;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap:wrap; gap:0.5rem;">
-                <div>
-                    <span style="background: #E5F9FB; border: 1px solid rgba(2, 191, 208, 0.4); color: #018591; font-size: 0.72rem; font-weight: 700; padding: 0.22rem 0.55rem; border-radius: 4px; text-transform: uppercase;">
-                        Champion Pipeline
-                    </span>
-                    <h2 style="margin: 0.4rem 0 0 0; font-size: 1.35rem; font-weight: 800; color: #17212B; font-family:'Manrope',sans-serif;">
-                        {eval_data.get("model_name", "Model_B_HistGradientBoosting")} (v{eval_data.get("model_version", "1.0.0")})
-                    </h2>
-                </div>
-                <div style="text-align: right; color: #8A959E; font-size: 0.8rem;">
-                    Evaluated on <b>{global_m.get("sample_count", 12408):,}</b> Out-of-Time Test Records (2023–2025)
-                </div>
-            </div>
+    mae_str = format_currency_eur(global_m.get("mae_eur", 1994895))
+    r2_str = f"{global_m.get('r2', 0.8332):.4f}"
+    rmse_str = format_currency_eur(global_m.get("rmse_eur", 5249453))
+    med_str = format_currency_eur(global_m.get("median_ae_eur", 443018))
+    m_name = eval_data.get("model_name", "Model_B_HistGradientBoosting")
+    m_ver = eval_data.get("model_version", "1.0.0")
+    s_count = f"{global_m.get('sample_count', 12408):,}"
 
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; text-align: center;">
-                <div style="background: #F8F9FA; padding: 0.8rem; border-radius: 6px; border:1px solid #EDF0F2;">
-                    <div style="font-size: 0.68rem; color: #8A959E; font-weight: 700;">TEST MAE</div>
-                    <div style="font-size: 1.5rem; font-weight: 800; color: #02BFD0; font-family:'Manrope',sans-serif;">
-                        {format_currency_eur(global_m.get("mae_eur", 1994895))}
-                    </div>
-                    <div style="font-size: 0.68rem; color: #20A56B; font-weight:600;">63.7% Better than Baseline</div>
-                </div>
-                <div style="background: #F8F9FA; padding: 0.8rem; border-radius: 6px; border:1px solid #EDF0F2;">
-                    <div style="font-size: 0.68rem; color: #8A959E; font-weight: 700;">TEST R²</div>
-                    <div style="font-size: 1.5rem; font-weight: 800; color: #17212B; font-family:'Manrope',sans-serif;">
-                        {global_m.get("r2", 0.8332):.4f}
-                    </div>
-                    <div style="font-size: 0.68rem; color: #018591; font-weight:600;">Out-of-Time Generalization</div>
-                </div>
-                <div style="background: #F8F9FA; padding: 0.8rem; border-radius: 6px; border:1px solid #EDF0F2;">
-                    <div style="font-size: 0.68rem; color: #8A959E; font-weight: 700;">TEST RMSE</div>
-                    <div style="font-size: 1.5rem; font-weight: 800; color: #3185C7; font-family:'Manrope',sans-serif;">
-                        {format_currency_eur(global_m.get("rmse_eur", 5249453))}
-                    </div>
-                    <div style="font-size: 0.68rem; color: #3185C7; font-weight:600;">Penalty on Outliers</div>
-                </div>
-                <div style="background: #F8F9FA; padding: 0.8rem; border-radius: 6px; border:1px solid #EDF0F2;">
-                    <div style="font-size: 0.68rem; color: #8A959E; font-weight: 700;">MEDIAN ABS ERROR</div>
-                    <div style="font-size: 1.5rem; font-weight: 800; color: #E5A52B; font-family:'Manrope',sans-serif;">
-                        {format_currency_eur(global_m.get("median_ae_eur", 443018))}
-                    </div>
-                    <div style="font-size: 0.68rem; color: #B26A00; font-weight:600;">Typical Player Deviation</div>
-                </div>
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
+    scorecard_html = (
+        '<div class="tm-card" style="padding: 1.25rem; margin-bottom: 1.25rem; border-left: 4px solid #02BFD0;">'
+        '<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap:wrap; gap:0.5rem;">'
+        "<div>"
+        '<span style="background: #E5F9FB; border: 1px solid rgba(2, 191, 208, 0.4); color: #018591; font-size: 0.72rem; font-weight: 700; padding: 0.22rem 0.55rem; border-radius: 4px; text-transform: uppercase;">'
+        "Champion Pipeline"
+        "</span>"
+        f"<h2 style=\"margin: 0.4rem 0 0 0; font-size: 1.35rem; font-weight: 800; color: #17212B; font-family:'Manrope',sans-serif;\">{m_name} (v{m_ver})</h2>"
+        "</div>"
+        f'<div style="text-align: right; color: #8A959E; font-size: 0.8rem;">Evaluated on <b>{s_count}</b> Out-of-Time Test Records (2023–2025)</div>'
+        "</div>"
+        '<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; text-align: center;">'
+        '<div style="background: #F8F9FA; padding: 0.8rem; border-radius: 6px; border:1px solid #EDF0F2;">'
+        '<div style="font-size: 0.68rem; color: #8A959E; font-weight: 700;">TEST MAE</div>'
+        f"<div style=\"font-size: 1.5rem; font-weight: 800; color: #02BFD0; font-family:'Manrope',sans-serif;\">{mae_str}</div>"
+        '<div style="font-size: 0.68rem; color: #20A56B; font-weight:600;">63.7% Better than Baseline</div>'
+        "</div>"
+        '<div style="background: #F8F9FA; padding: 0.8rem; border-radius: 6px; border:1px solid #EDF0F2;">'
+        '<div style="font-size: 0.68rem; color: #8A959E; font-weight: 700;">TEST R²</div>'
+        f"<div style=\"font-size: 1.5rem; font-weight: 800; color: #17212B; font-family:'Manrope',sans-serif;\">{r2_str}</div>"
+        '<div style="font-size: 0.68rem; color: #018591; font-weight:600;">Out-of-Time Generalization</div>'
+        "</div>"
+        '<div style="background: #F8F9FA; padding: 0.8rem; border-radius: 6px; border:1px solid #EDF0F2;">'
+        '<div style="font-size: 0.68rem; color: #8A959E; font-weight: 700;">TEST RMSE</div>'
+        f"<div style=\"font-size: 1.5rem; font-weight: 800; color: #3185C7; font-family:'Manrope',sans-serif;\">{rmse_str}</div>"
+        '<div style="font-size: 0.68rem; color: #3185C7; font-weight:600;">Penalty on Outliers</div>'
+        "</div>"
+        '<div style="background: #F8F9FA; padding: 0.8rem; border-radius: 6px; border:1px solid #EDF0F2;">'
+        '<div style="font-size: 0.68rem; color: #8A959E; font-weight: 700;">MEDIAN ABS ERROR</div>'
+        f"<div style=\"font-size: 1.5rem; font-weight: 800; color: #E5A52B; font-family:'Manrope',sans-serif;\">{med_str}</div>"
+        '<div style="font-size: 0.68rem; color: #B26A00; font-weight:600;">Typical Player Deviation</div>'
+        "</div>"
+        "</div>"
+        "</div>"
     )
+    st.markdown(scorecard_html, unsafe_allow_html=True)
 
     # 2. Out-of-Time League Breakdown Table
     st.markdown(
