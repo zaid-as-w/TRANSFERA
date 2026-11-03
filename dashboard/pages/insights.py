@@ -33,7 +33,7 @@ def render_insights_page(data_service: DataService, pred_service: DashboardPredi
         unsafe_allow_html=True,
     )
 
-    # 1. Champion Model Scorecard
+    # 1. Champion Model Header & Scorecard
     mae_str = format_currency_eur(global_m.get("mae_eur", 1994895))
     r2_str = f"{global_m.get('r2', 0.8332):.4f}"
     rmse_str = format_currency_eur(global_m.get("rmse_eur", 5249453))
@@ -42,42 +42,70 @@ def render_insights_page(data_service: DataService, pred_service: DashboardPredi
     m_ver = eval_data.get("model_version", "1.0.0")
     s_count = f"{global_m.get('sample_count', 12408):,}"
 
-    scorecard_html = (
-        '<div class="tm-card" style="padding: 1.25rem; margin-bottom: 1.25rem; border-left: 4px solid #02BFD0;">'
-        '<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap:wrap; gap:0.5rem;">'
+    header_html = (
+        '<div class="tm-card" style="padding: 1.1rem 1.25rem; margin-bottom: 0.85rem; border-left: 4px solid #02BFD0;">'
+        '<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">'
         "<div>"
         '<span style="background: #E5F9FB; border: 1px solid rgba(2, 191, 208, 0.4); color: #018591; font-size: 0.72rem; font-weight: 700; padding: 0.22rem 0.55rem; border-radius: 4px; text-transform: uppercase;">'
         "Champion Pipeline"
         "</span>"
-        f"<h2 style=\"margin: 0.4rem 0 0 0; font-size: 1.35rem; font-weight: 800; color: #17212B; font-family:'Manrope',sans-serif;\">{m_name} (v{m_ver})</h2>"
+        f"<h2 style=\"margin: 0.35rem 0 0 0; font-size: 1.35rem; font-weight: 800; color: #17212B; font-family:'Manrope',sans-serif;\">{m_name} (v{m_ver})</h2>"
         "</div>"
         f'<div style="text-align: right; color: #8A959E; font-size: 0.8rem;">Evaluated on <b>{s_count}</b> Out-of-Time Test Records (2023–2025)</div>'
         "</div>"
-        '<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; text-align: center;">'
-        '<div style="background: #F8F9FA; padding: 0.8rem; border-radius: 6px; border:1px solid #EDF0F2;">'
-        '<div style="font-size: 0.68rem; color: #8A959E; font-weight: 700;">TEST MAE</div>'
-        f"<div style=\"font-size: 1.5rem; font-weight: 800; color: #02BFD0; font-family:'Manrope',sans-serif;\">{mae_str}</div>"
-        '<div style="font-size: 0.68rem; color: #20A56B; font-weight:600;">63.7% Better than Baseline</div>'
-        "</div>"
-        '<div style="background: #F8F9FA; padding: 0.8rem; border-radius: 6px; border:1px solid #EDF0F2;">'
-        '<div style="font-size: 0.68rem; color: #8A959E; font-weight: 700;">TEST R²</div>'
-        f"<div style=\"font-size: 1.5rem; font-weight: 800; color: #17212B; font-family:'Manrope',sans-serif;\">{r2_str}</div>"
-        '<div style="font-size: 0.68rem; color: #018591; font-weight:600;">Out-of-Time Generalization</div>'
-        "</div>"
-        '<div style="background: #F8F9FA; padding: 0.8rem; border-radius: 6px; border:1px solid #EDF0F2;">'
-        '<div style="font-size: 0.68rem; color: #8A959E; font-weight: 700;">TEST RMSE</div>'
-        f"<div style=\"font-size: 1.5rem; font-weight: 800; color: #3185C7; font-family:'Manrope',sans-serif;\">{rmse_str}</div>"
-        '<div style="font-size: 0.68rem; color: #3185C7; font-weight:600;">Penalty on Outliers</div>'
-        "</div>"
-        '<div style="background: #F8F9FA; padding: 0.8rem; border-radius: 6px; border:1px solid #EDF0F2;">'
-        '<div style="font-size: 0.68rem; color: #8A959E; font-weight: 700;">MEDIAN ABS ERROR</div>'
-        f"<div style=\"font-size: 1.5rem; font-weight: 800; color: #E5A52B; font-family:'Manrope',sans-serif;\">{med_str}</div>"
-        '<div style="font-size: 0.68rem; color: #B26A00; font-weight:600;">Typical Player Deviation</div>'
-        "</div>"
-        "</div>"
         "</div>"
     )
-    st.markdown(scorecard_html, unsafe_allow_html=True)
+    st.markdown(header_html, unsafe_allow_html=True)
+
+    # 4 Visual KPI Cards matching the exact TRANSFERA design specification
+    c_mae, c_r2, c_rmse, c_med = st.columns(4)
+
+    card_style = (
+        "padding: 1.1rem 0.8rem; text-align: center; border-radius: 8px; "
+        "border: 1px solid #E2E6E9; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.03);"
+    )
+
+    with c_mae:
+        st.markdown(
+            f'<div class="tm-card" style="{card_style}">'
+            '<div style="font-size: 0.74rem; color: #8A959E; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">TEST MAE</div>'
+            f"<div style=\"font-size: 1.9rem; font-weight: 800; color: #02BFD0; font-family:'Manrope',sans-serif; margin: 0.3rem 0;\">{mae_str}</div>"
+            '<div style="font-size: 0.74rem; color: #20A56B; font-weight: 700;">63.7% Better than Baseline</div>'
+            "</div>",
+            unsafe_allow_html=True,
+        )
+
+    with c_r2:
+        st.markdown(
+            f'<div class="tm-card" style="{card_style}">'
+            '<div style="font-size: 0.74rem; color: #8A959E; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">TEST R²</div>'
+            f"<div style=\"font-size: 1.9rem; font-weight: 800; color: #17212B; font-family:'Manrope',sans-serif; margin: 0.3rem 0;\">{r2_str}</div>"
+            '<div style="font-size: 0.74rem; color: #018591; font-weight: 700;">Out-of-Time Generalization</div>'
+            "</div>",
+            unsafe_allow_html=True,
+        )
+
+    with c_rmse:
+        st.markdown(
+            f'<div class="tm-card" style="{card_style}">'
+            '<div style="font-size: 0.74rem; color: #8A959E; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">TEST RMSE</div>'
+            f"<div style=\"font-size: 1.9rem; font-weight: 800; color: #3185C7; font-family:'Manrope',sans-serif; margin: 0.3rem 0;\">{rmse_str}</div>"
+            '<div style="font-size: 0.74rem; color: #3185C7; font-weight: 700;">Penalty on Outliers</div>'
+            "</div>",
+            unsafe_allow_html=True,
+        )
+
+    with c_med:
+        st.markdown(
+            f'<div class="tm-card" style="{card_style}">'
+            '<div style="font-size: 0.74rem; color: #8A959E; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">MEDIAN ABS ERROR</div>'
+            f"<div style=\"font-size: 1.9rem; font-weight: 800; color: #E5A52B; font-family:'Manrope',sans-serif; margin: 0.3rem 0;\">{med_str}</div>"
+            '<div style="font-size: 0.74rem; color: #B26A00; font-weight: 700;">Typical Player Deviation</div>'
+            "</div>",
+            unsafe_allow_html=True,
+        )
+
+    st.markdown("<div style='height: 0.9rem;'></div>", unsafe_allow_html=True)
 
     # 2. Out-of-Time League Breakdown Table
     st.markdown(
